@@ -11,15 +11,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('pages.dashboard');
+});
 
-Route::get('/', 'HomeController@index')
-    ->name('home');
 
-Route::get('/register', 'AuthController@index')
-    ->name('register');
-
-Route::post('/welcome', 'AuthController@welcome')
-    ->name('welcome');
+Route::get('/data-tables', 'DataTablesController@index')
+    ->name('dataTables');

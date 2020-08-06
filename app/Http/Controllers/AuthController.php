@@ -20,6 +20,5 @@ class AuthController extends Controller
         return view('welcome')
             ->with('firstname', $firstname)
             ->with('lastname', $lastname);
-        // return "Selamat datang $firstname $lastname";
     }
 }
