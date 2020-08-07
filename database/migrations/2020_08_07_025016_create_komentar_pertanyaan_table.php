@@ -17,8 +17,8 @@ class CreateKomentarPertanyaanTable extends Migration
             $table->bigIncrements('id');
             $table->longText('isi');
             // fk
-            $table->unsignedBigInteger('pertanyaan_id');
-            $table->unsignedBigInteger('profile_id');
+            $table->unsignedBigInteger('pertanyaan_id')->nullable();
+            $table->unsignedBigInteger('profile_id')->nullable();
 
             $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
             $table->foreign('profile_id')->references('id')->on('profiles');
