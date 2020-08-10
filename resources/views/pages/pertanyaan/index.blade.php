@@ -9,7 +9,7 @@
   <div class="content-wrapper">
     <div class="card card-primary shadow mx-3 mt-3">
       <div class="card-header">
-        <h3 class="card-title">Buat Pertanyaan Baru</h3>
+        <h3 class="card-title">Data Pertanyaan</h3>
       </div>
       <!-- /.card-header -->
       <div class="card-body">
@@ -18,15 +18,13 @@
                   {{ session('success') }}
               </div>
           @endif
-        <a href="/pertanyaan/create" class="btn btn-primary btn-sm mb-2">Tambah</a>
+            <a href="{{ route('pertanyaan.create') }}" class="btn btn-primary btn-sm mb-2">Tambah</a>
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
             <th>#</th>
             <th>Judul</th>
             <th>Isi</th>
-            <th>Profile ID</th>
-            <th>Jawaban Tepat ID</th>
             <th>Action</th>
           </tr>
           </thead>
@@ -36,11 +34,11 @@
                 <td>{{ $key + 1 }}</td>
             <td>{{ $pertanyaan->judul }}</td>
                 <td>{{ $pertanyaan->isi }}</td>
-                <td>{{ $pertanyaan->profile_id }}</td>
-                <td>{{ $pertanyaan->jawaban_tepat_id }}</td>
                 <td class="inline">
-                    <a href="/pertanyaan/{{$pertanyaan->id}}" class="btn btn-info btn-xs">Show</a>
-                    <a href="/pertanyaan/{{$pertanyaan->id}}/edit" class="btn btn-default btn-xs">edit</a>
+                    {{-- <a href="/pertanyaan/{{$pertanyaan->id}}" class="btn btn-info btn-xs">Show</a>
+                    <a href="/pertanyaan/{{$pertanyaan->id}}/edit" class="btn btn-default btn-xs">edit</a> --}}
+                    <a href="{{ route('pertanyaan.show', $pertanyaan->id) }}" class="btn btn-info btn-xs">Show</a>
+                    <a href="{{ route('pertanyaan.edit', $pertanyaan->id) }}" class="btn btn-default btn-xs">edit</a>
                     <form action="/pertanyaan/{{$pertanyaan->id}}" class="d-inline" method="POST">
                         @csrf
                         @method('DELETE')
@@ -50,7 +48,7 @@
             </tr>
           @empty
             <tr>
-                <td colspan="6">Empty Data</td>
+                <td colspan="4">Empty Data</td>
             </tr>
           @endforelse
           </tbody>
@@ -59,8 +57,6 @@
             <th>#</th>
             <th>Judul</th>
             <th>Isi</th>
-            <th>Profile ID</th>
-            <th>Jawaban Tepat ID</th>
             <th>Action</th>
           </tr>
           </tfoot>

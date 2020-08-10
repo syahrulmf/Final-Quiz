@@ -22,24 +22,26 @@ Route::get('/data-tables', 'DataTablesController@index')
 
 // tugas crud
 
-Route::get('/pertanyaan', 'PertanyaanController@index')
-    ->name('pertanyaan-index');
+// Route::get('/pertanyaan', 'PertanyaanController@index')
+//     ->name('pertanyaan-index');
 
-Route::get('/pertanyaan/create', 'PertanyaanController@create')
-    ->name('pertanyaan-create');
+// Route::get('/pertanyaan/create', 'PertanyaanController@create')
+//     ->name('pertanyaan-create');
 
-Route::post('/pertanyaan', 'PertanyaanController@store')
-    ->name('pertanyaan-store');
+// Route::post('/pertanyaan', 'PertanyaanController@store')
+//     ->name('pertanyaan-store');
 
-Route::get('/pertanyaan/{id}', 'PertanyaanController@show')
-    ->name('pertanyaan-show');
+// Route::get('/pertanyaan/{id}', 'PertanyaanController@show')
+//     ->name('pertanyaan-show');
 
-Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit')
-    ->name('pertanyaan-edit');
+// Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit')
+//     ->name('pertanyaan-edit');
 
-Route::put('/pertanyaan/{id}', 'PertanyaanController@update')
-    ->name('pertanyaan-update');
+// Route::put('/pertanyaan/{id}', 'PertanyaanController@update')
+//     ->name('pertanyaan-update');
 
-Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy')
-    ->name('pertanyaan-update');
+// Route::delete('/pertanyaan/{id}', 'PertanyaanController@destroy')
+//     ->name('pertanyaan-delete');
+
+Route::resource('pertanyaan', 'PertanyaanController');
 

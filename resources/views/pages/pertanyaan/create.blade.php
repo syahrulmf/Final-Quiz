@@ -26,26 +26,6 @@
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
-            <div class="form-group">
-                <label for="profile">Profile</label>
-                <input type="text" class="form-control" name="profile_id" id="profile" placeholder="Masukan Profile..">
-                @error('profile')
-                  <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-                {{-- <select name="profile" id="profile" class="form-control">
-                  <option value="">Select</option>
-                </select> --}}
-            </div>
-            <div class="form-group">
-                <label for="jawaban">Jawaban</label>
-                <input type="text" class="form-control" name="jawaban_tepat_id" id="jawaban" placeholder="Masukan jawaban..">
-                @error('jawaban')
-                  <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
-                {{-- <select name="jawaban" id="jawaban" class="form-control">
-                  <option value="">Select</option>
-                </select> --}}
-            </div>
           </div>
           <!-- /.card-body -->
 
