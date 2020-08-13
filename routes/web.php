@@ -45,3 +45,7 @@ Route::get('/data-tables', 'DataTablesController@index')
 
 Route::resource('pertanyaan', 'PertanyaanController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

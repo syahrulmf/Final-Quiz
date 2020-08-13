@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 use DB;
 use App\Pertanyaan;
+use App\Tag;
+use Auth;
 
 class PertanyaanController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth')->except(['index']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -59,12 +68,28 @@ class PertanyaanController extends Controller
         // $pertanyaan->isi = $request["isi"];
         // $pertanyaan->save();
 
+        $tags_arr = explode(',', $request["tags"]);
+
+        $tag_ids = [];
+        foreach ($tags_arr as $tag_name) {
+            $tag = Tag::where("tag_name", $tag_name)->first();
+            $tag = Tag::firstOrCreate(['tag_name' => $tag_name]);
+            $tag_ids[] = $tag->id;
+        }
+
         $pertanyaan = Pertanyaan::create([
             "judul" => $request["judul"],
             "isi" => $request["isi"]
         ]);
 
-        return redirect('/pertanyaan')->with('success', 'Pertanyaan Berhasil Disimpan!');
+        $pertanyaan->tags()->sync($tag_ids);
+
+        $profile = Auth::user()->profile;
+        $profile->pertanyaan()->save($pertanyaan);
+
+        Alert::success('Berhasil', 'Berhasil Menambahkan Pertanyaan!');
+
+        return redirect('/pertanyaan');
     }
 
     /**

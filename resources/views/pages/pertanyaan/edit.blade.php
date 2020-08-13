@@ -8,7 +8,7 @@
         <h3 class="card-title">Edit Pertanyaan {{ $pertanyaan->id }}</h3>
       </div>
       <!-- /.card-header -->
-      <form role="form" action="/pertanyaan/{{ $pertanyaan->id }}" method="POST">
+      <form role="form" action="{{ url('/pertanyaan', $pertanyaan->id)  }}" method="POST">
         @csrf
         @method('PUT')
           <div class="card-body">
@@ -26,6 +26,13 @@
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
             </div>
+            {{-- <div class="form-group">
+              <label for="tags">tags</label>
+                <input type="text" class="form-control" name="tags" id="tags" value="{{ $pertanyaan->tags }}" required>
+                @error('tags')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div> --}}
           </div>
           <!-- /.card-body -->
 

@@ -9,15 +9,15 @@
 
       </div>
       <!-- /.card-header -->
-      <form role="form" action="/pertanyaan" method="POST">
+        <form role="form" action="{{ url('/pertanyaan') }}" method="POST">
         @csrf
           <div class="card-body">
             <div class="form-group">
               <label for="judul">Judul</label>
-            <input type="text" class="form-control" name="judul" id="judul" value="{{ old('judul', '') }}" placeholder="Masukan Judul.." required>
-              @error('judul')
+                <input type="text" class="form-control" name="judul" id="judul" value="{{ old('judul', '') }}" placeholder="Masukan Judul.." required>
+                @error('judul')
                   <div class="alert alert-danger">{{ $message }}</div>
-              @enderror
+                @enderror
             </div>
             <div class="form-group">
               <label for="isi">Isi</label>
@@ -25,6 +25,13 @@
               @error('isi')
                   <div class="alert alert-danger">{{ $message }}</div>
               @enderror
+            </div>
+            <div class="form-group">
+              <label for="tags">tags</label>
+                <input type="text" class="form-control" name="tags" id="tags" value="{{ old('tags', '') }}" placeholder="contoh : pertanyaan,terkini,laravel" required>
+                @error('tags')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
           </div>
           <!-- /.card-body -->

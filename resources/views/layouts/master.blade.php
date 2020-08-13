@@ -33,5 +33,8 @@
 @include('includes.scripts')
 
 @stack('script')
+
+@include('sweetalert::alert')
+
 </body>
 </html>
