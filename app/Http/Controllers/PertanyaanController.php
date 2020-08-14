@@ -7,6 +7,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 use DB;
 use App\Pertanyaan;
+use App\Profile;
 use App\Tag;
 use Auth;
 
@@ -167,6 +168,9 @@ class PertanyaanController extends Controller
         // $query = DB::table('pertanyaan')->where('id', $id)->delete();
 
         $pertanyaan = Pertanyaan::destroy($id);
+
+        // $profile = Profile::where('profile_id', $id);
+        // $profile->delete();
 
         return redirect('/pertanyaan')->with('success', 'Berhasil hapus pertanyaan!');
     }
