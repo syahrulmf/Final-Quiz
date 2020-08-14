@@ -29,8 +29,6 @@
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
           </div>
         </div>
         <div class="card-body">
@@ -66,27 +64,6 @@
               @empty
                 No Post
               @endforelse
-
-                {{-- <div class="post">
-                  <div class="user-block">
-                  <img class="img-circle img-bordered-sm" src="{{ url('backend/dist/img/user1-128x128.jpg') }}" alt="user image">
-                    <span class="username">
-                      <a href="#">Jonathan Burke Jr.</a>
-                    </span>
-                    <span class="description">Shared publicly - 7:45 PM today</span>
-                  </div>
-                  <!-- /.user-block -->
-                  <h4>Post Tittle</h4>
-                  <p>
-                    Lorem ipsum represents a long-held tradition for designers,
-                    typographers and the like. Some people hate it and argue for
-                    its demise, but others ignore.
-                  </p>
-
-                  <p>
-                    <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> tags</a>
-                  </p>
-                </div> --}}
             </div>
             {{-- /col --}}
           </div>

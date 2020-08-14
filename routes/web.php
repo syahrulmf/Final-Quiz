@@ -11,15 +11,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('pages.forum.index');
-// });
-
 Route::get('/', 'ForumController@index')->name('forum-index');
+Route::get('/pertanyaan/{id}', 'ForumController@show')->name('forum-show');
 
 Route::resource('pertanyaan', 'PertanyaanController');
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

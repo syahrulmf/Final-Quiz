@@ -25,8 +25,6 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
-        // $pertanyaan = DB::table('pertanyaan')->get();
-
         $pertanyaan = Pertanyaan::all();
 
         return view('pages.pertanyaan.index', compact('pertanyaan'));
@@ -53,21 +51,7 @@ class PertanyaanController extends Controller
         $request->validate([
             'judul' => 'required',
             'isi' => 'required'
-            // 'profile' => 'nullable',
-            // 'jawaban' => 'nullable',
         ]);
-
-        // $query = DB::table('pertanyaan')->insert([
-        //     "judul" => $request["judul"],
-        //     "isi" => $request["isi"],
-        //     "profile_id" => $request["profile_id"],
-        //     "jawaban_tepat_id" => $request["jawaban_tepat_id"]
-        // ]);
-
-        // $pertanyaan = new Pertanyaan;
-        // $pertanyaan->judul = $request["judul"];
-        // $pertanyaan->isi = $request["isi"];
-        // $pertanyaan->save();
 
         $tags_arr = explode(',', $request["tags"]);
 
@@ -101,8 +85,6 @@ class PertanyaanController extends Controller
      */
     public function show($id)
     {
-        // $pertanyaan = DB::table('pertanyaan')->where('id', $id)->first();
-
         $pertanyaan = Pertanyaan::findOrFail($id);
 
         return view('pages.pertanyaan.show', compact('pertanyaan'));
@@ -116,8 +98,6 @@ class PertanyaanController extends Controller
      */
     public function edit($id)
     {
-        // $pertanyaan = DB::table('pertanyaan')->where('id', $id)->first();
-
         $pertanyaan = Pertanyaan::findOrFail($id);
 
         return view('pages.pertanyaan.edit', compact('pertanyaan'));
@@ -139,15 +119,6 @@ class PertanyaanController extends Controller
             'jawaban' => 'nullable',
         ]);
 
-        // $query = DB::table('pertanyaan')
-        //     ->where('id', $id)
-        //     ->update([
-        //         "judul" => $request["judul"],
-        //         "isi" => $request["isi"],
-        //         "profile_id" => $request["profile_id"],
-        //         "jawaban_tepat_id" => $request["jawaban_tepat_id"]
-        // ]);
-
         $pertanyaan = Pertanyaan::where('id', $id)->update([
             "judul" => $request["judul"],
             "isi" => $request["isi"]
@@ -165,13 +136,10 @@ class PertanyaanController extends Controller
      */
     public function destroy($id)
     {
-        // $query = DB::table('pertanyaan')->where('id', $id)->delete();
-
         $pertanyaan = Pertanyaan::destroy($id);
 
-        // $profile = Profile::where('profile_id', $id);
-        // $profile->delete();
+        Alert::success('Berhasil', 'Berhasil Menghapus Pertanyaan!');
 
-        return redirect('/pertanyaan')->with('success', 'Berhasil hapus pertanyaan!');
+        return redirect('/pertanyaan');
     }
 }
