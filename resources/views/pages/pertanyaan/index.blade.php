@@ -22,7 +22,7 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
-            <th>id</th>
+            <th>No</th>
             <th>Judul</th>
             <th>Isi</th>
             <th>Action</th>

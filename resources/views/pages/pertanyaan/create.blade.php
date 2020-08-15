@@ -13,7 +13,7 @@
         @csrf
           <div class="card-body">
             <div class="form-group">
-              <label for="judul">Judul</label>
+              <label for="judul">Judul </label>
                 <input type="text" class="form-control" name="judul" id="judul" value="{{ old('judul', '') }}" placeholder="Masukan Judul.." required>
                 @error('judul')
                   <div class="alert alert-danger">{{ $message }}</div>
