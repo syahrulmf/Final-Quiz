@@ -6,3 +6,10 @@
 <script src="{{ url('backend/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('backend/dist/js/demo.js') }}"></script>
+<script src="{{ url('backend/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('.textarea').summernote()
+  })
+</script>

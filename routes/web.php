@@ -12,9 +12,6 @@
 */
 
 Route::get('/', 'ForumController@index')->name('forum-index');
-Route::get('/pertanyaan/{id}', 'ForumController@show')->name('forum-show');
-
 Route::resource('pertanyaan', 'PertanyaanController');
-
 
 Auth::routes();

@@ -23,4 +23,8 @@ class Pertanyaan extends Model
     public function tags() {
         return $this->belongsToMany('App\Tag', 'pertanyaan_tag', 'pertanyaan_id', 'tag_id');
     }
+
+    public function komentarPertanyaan() {
+        return $this->hasMany('App\KomentarPertanyaan', 'pertanyaan_id');
+    }
 }

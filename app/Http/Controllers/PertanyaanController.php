@@ -124,7 +124,8 @@ class PertanyaanController extends Controller
             "isi" => $request["isi"]
         ]);
 
-        return redirect('/pertanyaan')->with('success', 'Berhasil update pertanyaan!');
+        Alert::success('Berhasil', 'Berhasil Update Pertanyaan!');
+        return redirect('/pertanyaan');
 
     }
 

@@ -13,4 +13,8 @@ class Profile extends Model
     public function pertanyaan() {
         return $this->hasMany('App\Pertanyaan', 'profile_id');
     }
+
+    public function komentarPertanyaan() {
+        return $this->hasMany('App\KomentarPertanyaan', 'profile_id');
+    }
 }

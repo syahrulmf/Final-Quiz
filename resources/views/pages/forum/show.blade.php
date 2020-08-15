@@ -62,9 +62,8 @@
                 <div class="card-body">
                     <form action="">
                         @csrf
-                        <div class="form-group">
-                            <textarea name="isi" class="form-control" cols="10" rows="3"></textarea>
-                        </div>
+                        <textarea class="textarea" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name=""></textarea>
                         <button type="submit" class="btn btn-default btn-sm">Buat</button>
                     </form>
                 </div>
@@ -77,11 +76,10 @@
                     <h4>Buat Komentar</h1>
                 </div>
                 <div class="card-body">
-                    <form action="">
+                    <form>
                         @csrf
-                        <div class="form-group">
-                            <textarea name="isi" class="form-control" cols="10" rows="3"></textarea>
-                        </div>
+                        <textarea class="textarea" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                         <button type="submit" class="btn btn-default btn-sm">Buat</button>
                     </form>
                 </div>
